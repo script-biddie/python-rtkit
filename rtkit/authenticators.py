@@ -124,7 +124,7 @@ class CookieAuthenticator(AbstractAuthenticator):
     def _login(self):
         data = {'user': self.username, 'pass': self.password}
         self.opener.open(
-            urllib2.Request(self.url, urlencode(data))
+            urllib2.Request(self.url, urlencode(data).encode('utf-8'))
         )
 
 
