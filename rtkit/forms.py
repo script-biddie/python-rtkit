@@ -136,7 +136,6 @@ def encode(value, headers):
         headers.setdefault('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8')
     else:
         mf = MultipartForm(value, BOUNDARY)
-        print(mf)
         value = ''.join(list(mf))
         headers['Content-Type'] = "multipart/form-data; boundary=%s" % BOUNDARY
         headers['Content-Length'] = str(mf.get_size())

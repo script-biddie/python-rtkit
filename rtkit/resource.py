@@ -37,7 +37,6 @@ class RTResource(object):
         headers = headers or dict()
         headers.setdefault('Accept', 'text/plain')
         if payload:
-            print(payload)
             payload = forms.encode(payload, headers)
         self.logger.debug('{0} {1}'.format(method, path))
         self.logger.debug(headers)
