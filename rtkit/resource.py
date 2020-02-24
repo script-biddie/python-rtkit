@@ -39,7 +39,6 @@ class RTResource(object):
         if payload:
             payload = forms.encode(payload, headers)
         self.logger.debug('{0} {1}'.format(method, path))
-        self.logger.debug(headers)
         self.logger.debug('%r' % payload)
         req = Request(
             url=self.auth.url + path,
