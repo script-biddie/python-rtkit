@@ -68,8 +68,8 @@ class RTParser(object):
             []
         """
         try:
-            lines = ifilterfalse(cls.COMMENT.match, lines)
-            return [(k.encode('utf-8'), v.strip(' ').encode('utf-8')) for k, v in [l.split(':', 1) for l in lines]]
+            # lines = ifilterfalse(cls.COMMENT.match, lines)
+            return [(k, v.strip(' ')) for k, v in [l.split(':', 1) for l in lines]]
         except (ValueError, IndexError):
             return []
 
